@@ -1,0 +1,11 @@
+.div-center {
+    display: flex;
+    justify-content: center;
+}
+
+.ascii-art-box {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
+}

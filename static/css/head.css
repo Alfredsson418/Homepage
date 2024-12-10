@@ -1,0 +1,15 @@
+body {
+    font-family: "Ubuntu";
+    margin: 0;
+}
+
+.menu-bar {
+    margin: 2em;
+}
+
+.menu-item {
+    border-color: black;
+    border-style: solid;
+    width: 5em;
+    text-align: center;
+}

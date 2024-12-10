@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    # restart: unless-stopped
+  phpmyadmin:
+    image: phpmyadmin/latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 0
+    # restart: unless-stopped
+    ports:
+      - 8081:80
+    depends_on:
+      - db
+volumes:
+  dbdata:

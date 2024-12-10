@@ -1,0 +1,53 @@
+{% extends "head.html" %} {% block content %}
+
+<div class="div-center">
+    <pre>
+    ______            __             __                             __
+   / ____/___  ____  / /_____ ______/ /_   ____ ___  ___     ____ _/ /__
+  / /   / __ \/ __ \/ __/ __ `/ ___/ __/  / __ `__ \/ _ \   / __ `/ __(_)
+ / /___/ /_/ / / / / /_/ /_/ / /__/ /_   / / / / / /  __/  / /_/ / /__
+ \____/\____/_/ /_/\__/\__,_/\___/\__/  /_/ /_/ /_/\___/   \__,_/\__(_)  </pre
+    >
+</div>
+
+<div class="socials-image-grid grid-4x">
+    <div class="grid-box">
+        <a href="https://www.linkedin.com/in/oskar-alfredsson-67a731245/">
+            <img
+                src="{{ url_for('static', filename='images/social-icons/linkedin_icon_128px.png') }}"
+                class="social-icon"
+                alt="Linkedin icon"
+            />
+        </a>
+    </div>
+
+    <div class="grid-box">
+        <a href="https://github.com/Alfredsson418/">
+            <img
+                src="{{ url_for('static', filename='images/social-icons/github_icon_128px.png') }}"
+                class="social-icon"
+                alt="Github icon"
+            />
+        </a>
+    </div>
+    <div class="grid-box">
+        <a href="https://stackoverflow.com/users/22832878/alfredsson418">
+            <img
+                src="{{ url_for('static', filename='images/social-icons/stackoverflow_icon_128px.png') }}"
+                class="social-icon"
+                alt="Stackoverflow icon"
+            />
+        </a>
+    </div>
+    <div class="grid-box">
+        <a href="https://www.sweclockers.com/medlem/349287">
+            <img
+                src="{{ url_for('static', filename='images/social-icons/sweclockers_icon_128px.jpg') }}"
+                class="social-icon"
+                alt="Sweclockers icon"
+            />
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

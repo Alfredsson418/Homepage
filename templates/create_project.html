@@ -1,0 +1,22 @@
+{% extends 'head.html' %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="name"
+               placeholder="Project name"
+               value="{{ request.form['name'] }}"></input>
+        <br>
+
+        <label for="content">Project URL</label>
+        <br>
+        <textarea name="url"
+                  placeholder="URL"
+                  rows="1"
+                  cols="60"
+                  >{{ request.form['url'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

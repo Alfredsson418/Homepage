@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/head.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/grid.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/socials.css') }}">
+
+    <body>
+
+        <div class="div-center menu-bar">
+            <a href="{{ url_for('index') }}" class="menu-item">home</a>
+            <a href="{{ url_for('projects') }}" class="menu-item">projects</a>
+            <a href="{{ url_for('socials') }}" class="menu-item">socials</a>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>
