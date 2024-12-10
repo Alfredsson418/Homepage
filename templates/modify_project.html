@@ -1,0 +1,52 @@
+{% extends 'head.html' %}
+
+{% block content %}
+    <form method="post">
+
+        <input type="hidden" name="action" value="create">
+
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="name"
+               placeholder="Project name"
+               value="{{ request.form['name'] }}"></input>
+        <br>
+
+        <label for="content">Project URL</label>
+        <br>
+        <input type="text" name="url"
+               placeholder="Project URL"
+               value="{{ request.form['url'] }}"></input>
+        <br>
+
+        <label for="descr">Description</label>
+        <br>
+        <textarea name="descr" placeholder="Description for project">{{ request.form['descr'] }}</textarea>
+        <br>
+        <input type="color" id="color" name="color">
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <div class="grid-3x">
+    {% for project in projects %}
+        <div class="grid-box" style="background-color: {{ project['color'] }};">
+            <form method="post">
+                <input type="hidden" name="action" value="modify">
+                <input type="text" name="id" value="{{ project['id'] }}"></input>
+                <input type="hidden" name="id_old" value="{{ project['id'] }}"></input>
+                <input type="text" name="name" value="{{ project['name'] }}"></input>
+                <input type="text" name="url" value="{{ project['url'] }}"></input>
+                <input type="text" name="descr" value="{{ project['descr'] }}"></input>
+                <input type="color" id="color" name="color" value="{{ project['color'] }}">
+                <button type="submit">Modify</button>
+            </form>
+            <form method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="{{ project['id'] }}">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+
+    {% endfor %}
+    </div>
+{% endblock %}

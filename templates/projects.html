@@ -1,5 +1,26 @@
-{% extends "head.html" %} {% block content %} {% for project in projects %}
-<p>{{ project.title }}</p>
-<p>{{ project.url }}</p>
+{% extends "head.html" %} {% block content %}
+
+<pre class="div-center">
+        __  ___                                _              __
+       /  |/  /__  __   ____   _____ ____     (_)___   _____ / /_ _____   _
+      / /|_/ // / / /  / __ \ / ___// __ \   / // _ \ / ___// __// ___/  (_)
+     / /  / // /_/ /  / /_/ // /   / /_/ /  / //  __// /__ / /_ (__  )  _
+    /_/  /_/ \__, /  / .___//_/    \____/__/ / \___/ \___/ \__//____/  (_)
+            /____/  /_/                 /___/                               </pre
+>
+<br />
+
+<div class="grid-3x">
+    {% for project in projects %}
+    <a
+        href="{{ project['url'] }}"
+        style="background-color: {{ project['color'] }};"
+        class="grid-box grid-box-reactive"
+    >
+        <h3>{{ project['name'] }}</h3>
+        <p>{{ project['descr'] }}</p>
+    </a>
+    {% endfor %}
+</div>
 
 {% endblock content %}

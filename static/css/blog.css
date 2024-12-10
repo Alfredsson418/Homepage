@@ -1,0 +1,13 @@
+.post {
+    background-color: wheat;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.post-title {
+    text-align: left;
+}
+
+.post-text {
+    text-align: left;
+}

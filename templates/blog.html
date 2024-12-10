@@ -1,0 +1,23 @@
+{% extends "head.html" %} {% block content %}
+
+<pre class="div-center">
+        ____                __
+       / __ \ ____   _____ / /_ _____   _
+      / /_/ // __ \ / ___// __// ___/  (_)
+     / ____// /_/ /(__  )/ /_ (__  )  _
+    /_/     \____//____/ \__//____/  (_)  </pre
+>
+
+<br />
+
+<div class="grid-1x">
+    {% for posts in blog %}
+    <div class="grid-box post">
+        <h3 class="post-title">{{ posts['title'] }}</h3>
+        <p class="post-text">{{ posts['text'] }}</p>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

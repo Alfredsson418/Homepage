@@ -7,14 +7,51 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/grid.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/socials.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
 
     <body>
 
+        <hr>
+
         <div class="div-center menu-bar">
-            <a href="{{ url_for('index') }}" class="menu-item">home</a>
-            <a href="{{ url_for('projects') }}" class="menu-item">projects</a>
-            <a href="{{ url_for('socials') }}" class="menu-item">socials</a>
+            <a href="{{ url_for('index') }}" class="menu-item">
+<pre>
+    __
+   / /_   ____   ____ ___   ___
+  / __ \ / __ \ / __ `__ \ / _ \
+ / / / // /_/ // / / / / //  __/
+/_/ /_/ \____//_/ /_/ /_/ \___/ </pre>
+            </a>
+            <a href="{{ url_for('projects') }}" class="menu-item">
+<pre>
+                           _              __
+    ____   _____ ____     (_)___   _____ / /_ _____
+   / __ \ / ___// __ \   / // _ \ / ___// __// ___/
+  / /_/ // /   / /_/ /  / //  __// /__ / /_ (__  )
+ / .___//_/    \____/__/ / \___/ \___/ \__//____/
+/_/                 /___/</pre>
+
+            </a>
+            <a href="{{ url_for('blog') }}" class="menu-item">
+<pre>
+    __     __
+   / /_   / /____   ____ _
+  / __ \ / // __ \ / __ `/
+ / /_/ // // /_/ // /_/ /
+/_.___//_/ \____/ \__, /
+                 /____/</pre>
+            </a>
+            <a href="{{ url_for('socials') }}" class="menu-item">
+<pre>
+                       _         __
+   _____ ____   _____ (_)____ _ / /_____
+  / ___// __ \ / ___// // __ `// // ___/
+ (__  )/ /_/ // /__ / // /_/ // /(__  )
+/____/ \____/ \___//_/ \__,_//_//____/  </pre>
+            </a>
         </div>
+
+        <hr>
 
         {% block content %}
         {% endblock %}

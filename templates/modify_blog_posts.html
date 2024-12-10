@@ -1,0 +1,43 @@
+{% extends 'head.html' %}
+
+{% block content %}
+    <form method="post">
+
+        <input type="hidden" name="action" value="create">
+
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Project name"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="text">Text</label>
+        <br>
+        <textarea name="text" placeholder="Blog text">{{ request.form['text'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+
+    </form>
+    <br>
+    <div class="grid-3x">
+    {% for post in blog %}
+        <div class="grid-box" style="background-color: antiquewhite;">
+            <form method="post">
+                <input type="hidden" name="action" value="modify">
+                <input type="hidden" name="id_old" value="{{ post['id'] }}">
+                <input type="text" name="title" value="{{ post['title'] }}">
+                <textarea name="text">{{ post['text'] }}</textarea>
+                <button type="submit">Modify</button>
+            </form>
+            <form method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="{{ post['id'] }}">
+                <button type="submit">Delete</button>
+            </form>
+
+        </div>
+
+    {% endfor %}
+    </div>
+{% endblock %}
